@@ -1,0 +1,17 @@
+<%= render "add_beer", locals: { beer: @beer } %>
+
+<div id="beers">
+  <h3>Sour Beers</h3>
+  <% @beers.each do |beer| %>
+    <div class="beer panel panel-default clearfix">
+      <div class="panel-content">
+        <%= image_tag("http://placehold.it/140x100") %>
+        <h4><%= beer.name %></h4>
+        <h5>Brewery: Some Brewery</h5>
+        <h5>From: Some City</h5>
+        <h5>ABV: 10%</h5>
+        <p><%= beer.description %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
