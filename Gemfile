@@ -35,6 +35,8 @@ gem 'simple_form'
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'bullet'
+  gem 'traceroute'
 end
 
 group :development, :test do
@@ -51,4 +53,5 @@ group :test do
   gem 'launchy'
   gem 'shoulda-matchers'
   gem 'formulaic'
+  gem "codeclimate-test-reporter"
 end
