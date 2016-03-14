@@ -25,7 +25,7 @@ end
 
 def user_sees_the_beer_listed_on_page(name:, description:)
   within(:css, "#beers") do
-    expect(page).to have_css("h3", text: name)
+    expect(page).to have_css("h4", text: name)
     expect(page).to have_css("p", text: description)
   end
 end
