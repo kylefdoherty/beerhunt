@@ -14,6 +14,34 @@
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if current_user %>
+          <li><%= link_to "Logout", logout_path, method: :delete %></li>
+          <li><%= image_tag(current_user.image_url, class: "img-circle")%></li>
+        <% else %>
+          <li><a data-toggle="modal" data-target="#loginModal" href="#">Login</a></li>
+        <% end %>
+        <!-- <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li> -->
+      </ul>
     </div><!--/.nav-collapse -->
   </div>
 </nav>
+
+
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Login to Join The Community</h4>
+      </div>
+      <div class="modal-body">
+        <div class="welcome-text">
+          Beer Hunt is a community to share and geek out about Sour Beers!
+        </div>
+        <%= link_to 'Login with Facebook', '/auth/facebook' %>
+      </div>
+    </div>
+  </div>
+</div>
