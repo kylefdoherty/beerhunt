@@ -20,6 +20,10 @@ feature "logging in and out" do
 end
 
 def user_logs_in
+  current_user = instance_double("User", admin?: false, image_url: "image.com")
+  allow_any_instance_of(ApplicationController)
+    .to receive(:current_user).and_return(current_user)
+
   visit root_path
   click_link "Login"
   click_link "Login with Facebook"

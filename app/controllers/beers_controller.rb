@@ -8,6 +8,27 @@ class BeersController < ApplicationController
 
   end
 
+  def edit
+    @beer = Beer.find(params[:id])
+
+    respond_to do |format|
+      format.js { render partial: "beers/edit_beer.js", beer: @beer }
+      format.json { render partial: "beers/edit_beer.js", beer: @beer }
+    end
+  end
+
+  def update
+    @beer = Beer.find(params[:id])
+
+    respond_to do |format|
+      if @beer.update(beer_params)
+        format.js { render partial: "beers/update_beer.js", beer: @beer }
+      else
+        format.json { render json: @beer.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def create
     @beer = Beer.new(beer_params)
 
@@ -19,7 +40,13 @@ class BeersController < ApplicationController
         format.json { render json: @beer.errors, status: :unprocessable_entity }
       end
     end
+  end
 
+  def destroy
+    @beer = Beer.find(params[:id])
+    @beer.destroy!
+
+    redirect_to action: "index"
   end
 
   private
