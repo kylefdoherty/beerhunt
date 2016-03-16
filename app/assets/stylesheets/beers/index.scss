@@ -2,10 +2,25 @@
   margin: 10px;
 }
 
-.panel-content {
-  margin: 10px;
-
-  p {
-    overflow: hidden;
+.panel-body {
+  img {
+    display: block;
+    margin: auto;
   }
+
+  .image-container {
+    padding: 0;
+
+    .action-buttons {
+      margin-top: 5px;
+
+      .button-container {
+        margin: auto;
+        width: 57%;
+      }
+    }
+  }
+
 }
+
+
