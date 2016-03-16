@@ -1,6 +1,6 @@
 <h2>Add a New Beer</h2>
 
-<%= simple_form_for(@beer, html: { class: "form-inline" }) do |form| %>
+<%= simple_form_for(beer, html: { class: "form-inline" }) do |form| %>
   <%= form.input :name %>
   <%= form.input :description, as: :string %>
   <%= form.button :submit, "Add Beer", class: "btn btn-primary" %>

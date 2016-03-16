@@ -1,17 +1,12 @@
-<%= render "add_beer", locals: { beer: @beer } %>
+<% if current_user.admin? %>
+  <%= render partial: "add_beer", locals: { beer: @beer } %>
+<% end %>
 
 <div id="beers">
   <h3>Sour Beers</h3>
   <% @beers.each do |beer| %>
-    <div class="beer panel panel-default clearfix">
-      <div class="panel-content">
-        <%= image_tag("http://placehold.it/140x100") %>
-        <h4><%= beer.name %></h4>
-        <h5>Brewery: Some Brewery</h5>
-        <h5>From: Some City</h5>
-        <h5>ABV: 10%</h5>
-        <p><%= beer.description %></p>
-      </div>
+    <div id="beer-<%=beer.id %>" class="beer panel panel-default clearfix">
+      <%= render partial: "beer_panel", locals: { beer: beer } %>
     </div>
   <% end %>
 </div>
