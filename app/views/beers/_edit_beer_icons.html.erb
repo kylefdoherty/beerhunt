@@ -1,0 +1,8 @@
+<div class="edit-beer-icons">
+  <%= link_to beer_path(beer), method: :delete, class: "delete-beer" do %>
+    <%= fa_icon "trash-o"%>
+  <% end %>
+  <%= link_to edit_beer_path(beer), remote: true, class: "edit-beer" do %>
+    <%= fa_icon "pencil-square-o"%>
+  <% end %>
+</div>

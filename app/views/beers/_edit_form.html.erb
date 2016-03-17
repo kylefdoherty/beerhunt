@@ -1,17 +1,8 @@
-<div class="panel-body">
-  <div class="row">
-    <div class="col-md-2">
-      <%= image_tag("http://placehold.it/140x100") %>
-    </div>
-    <div class="col-md-10">
-    <%= simple_form_for(beer, remote: true) do |form| %>
-      <%= form.input :name, label: false %>
-      <h5>Brewery: Some Brewery</h5>
-      <h5>From: Some City</h5>
-      <h5>ABV: 10%</h5>
-      <%= form.input :description, as: :string, label: false %>
-      <%= form.button :submit, "Edit Beer", class: "btn btn-primary" %>
-    <% end %>
-    </div>
-  </div>
-</div>
+<%= simple_form_for(beer, remote: true) do |form| %>
+  <%= form.input :name, label: false %>
+  <h5>Brewery: Some Brewery</h5>
+  <h5>From: Some City</h5>
+  <h5>ABV: 10%</h5>
+  <%= form.input :description, as: :string, label: false %>
+  <%= form.button :submit, "Edit Beer", class: "btn btn-primary" %>
+<% end %>

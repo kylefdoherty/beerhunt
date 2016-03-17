@@ -1,2 +1,1 @@
-console.log("boom");
-$("#beer-<%= @beer.id %>").html("<%= escape_javascript(render partial: 'beer_panel', locals: { beer: @beer }) %>");
+$("#beer-<%= @beer.id %>-info").html("<%= escape_javascript(render partial: 'beer_info', locals: { beer: @beer }) %>");

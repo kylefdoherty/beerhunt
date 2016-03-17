@@ -2,16 +2,6 @@
   <div class="row">
     <div class="image-container col-md-2">
       <%= image_tag("http://placehold.it/140x100") %>
-      <% if current_user.admin? %>
-        <div class="beer-icons">
-          <%= link_to beer_path(beer), method: :delete, class: "delete-beer" do %>
-            <%= fa_icon "trash-o"%>
-          <% end %>
-          <%= link_to edit_beer_path(beer), remote: true, class: "edit-beer" do %>
-            <%= fa_icon "pencil-square-o"%>
-          <% end %>
-        </div>
-      <% end %>
       <div class="action-buttons">
         <div class="button-container">
           <div class="like-btn-container" id="like-beer-<%= beer.id %>">
@@ -24,12 +14,11 @@
         </div>
       </div>
     </div>
-    <div class="col-md-10">
-      <h4><%= beer.name %></h4>
-      <h5>Brewery: Some Brewery</h5>
-      <h5>From: Some City</h5>
-      <h5>ABV: 10%</h5>
-      <p><%= beer.description %></p>
+    <% if current_user.admin? %>
+      <%= render partial: "edit_beer_icons", locals: { beer: beer } %>
+    <% end %>
+    <div id="beer-<%= beer.id %>-info" class="col-md-10">
+      <%= render partial: "beer_info", locals: { beer: beer } %>
     </div>
   </div>
 </div>
