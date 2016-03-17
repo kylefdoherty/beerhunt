@@ -1,0 +1,22 @@
+$primary-color: #5CA4A9;
+
+.comments-container {
+  margin: auto;
+  margin-top: 50px;
+  width: 80%;
+
+  h3 {
+    margin-bottom: 50px;
+  }
+}
+
+#add-beer-comment {
+  margin-bottom: 50px;
+  width: 70%;
+}
+
+.add-comment-btn {
+  background: $primary-color;
+  border-color: $primary-color;
+  color: white;
+}

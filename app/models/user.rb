@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :likes
+  has_many :comments
 
   def self.from_omniauth(auth_hash)
     user = User.find_or_create_by(provider: auth_hash.fetch("provider"),

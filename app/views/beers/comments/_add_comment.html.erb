@@ -1,0 +1,4 @@
+<%= simple_form_for([@beer, @comment], remote: true, html: { id: "add-beer-comment" }) do |form| %>
+  <%= form.input :content, as: :string, placeholder: "Comment on this beer", label: false %>
+  <%= form.button :submit, "Comment", class: "btn btn-default add-comment-btn" %>
+<% end %>

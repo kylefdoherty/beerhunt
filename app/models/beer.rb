@@ -1,5 +1,6 @@
 class Beer < ActiveRecord::Base
   has_many :likes
+  has_many :comments
 
   validates :name, presence: true
   validates :name, length: { minimum: 3, too_short: "name must be at least %{count} characters long" }
