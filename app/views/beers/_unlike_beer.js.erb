@@ -1,0 +1,2 @@
+$("#like-beer-<%= @beer.id %>").html("<%= escape_javascript(render partial: 'beers/like_beer.html', locals: { beer: @beer }) %>");
+

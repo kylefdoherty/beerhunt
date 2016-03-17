@@ -1,0 +1,11 @@
+<% if beer.liked_by_user(current_user.id) %>
+  <%= link_to unlike_path(beer_id: beer.id, user_id: current_user.id), remote: true, method: :delete, class: "like-btn liked btn btn-default" do %>
+    <%= fa_icon "heart"%>
+    <span class="like-count"><%= beer.likes.count %></span>
+  <% end %>
+<% else %>
+  <%= link_to likes_path(beer_id: beer.id), remote: true, method: :post, class: "like-btn btn btn-default" do %>
+    <%= fa_icon "heart"%>
+    <span class="like-count"><%= beer.likes.count %></span>
+  <% end %>
+<% end %>
