@@ -1,9 +1,30 @@
-.content.container {
-  margin-top: 100px;
-}
+$primary-color: #5CA4A9;
+$tertiary-color: #f4f1bb;
 
 .navbar {
-  height: 70px;
+  height: 90px;
+  background: $primary-color;
+  border-color: $primary-color;
+  position: relative;
+
+  .container {
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+  }
+
+  .navbar-brand {
+    color: $tertiary-color;
+    font-size: 2em;
+  }
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: $tertiary-color;
 }
 
 
