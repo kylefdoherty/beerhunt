@@ -1,6 +1,6 @@
 <div class="panel-body">
   <div class="row">
-    <div class="col-md-2">
+    <div class="image-container col-md-2">
       <%= image_tag("http://placehold.it/140x100") %>
       <% if current_user.admin? %>
         <div class="beer-icons">
@@ -12,6 +12,17 @@
           <% end %>
         </div>
       <% end %>
+      <div class="action-buttons">
+        <div class="button-container">
+          <div class="like-btn-container" id="like-beer-<%= beer.id %>">
+            <%= render partial: "like_beer", locals: { beer: beer } %>
+          </div>
+          <a href="#" class="comment-btn btn btn-default">
+            <%= fa_icon "comment-o "%>
+            <span class="comment-count">3</span>
+          </a>
+        </div>
+      </div>
     </div>
     <div class="col-md-10">
       <h4><%= beer.name %></h4>
