@@ -1,4 +1,4 @@
-$primary-color: #5CA4A9;
+$primary-color: #5ca4a9;
 
 .comments-container {
   margin: auto;
@@ -15,8 +15,18 @@ $primary-color: #5CA4A9;
   width: 70%;
 }
 
-.add-comment-btn {
+.comment-submit-btn {
   background: $primary-color;
   border-color: $primary-color;
   color: white;
+}
+
+.comment-content {
+  .panel-title {
+    display: inline;
+  }
+
+  .edit-comments-icons {
+    float: right;
+  }
 }

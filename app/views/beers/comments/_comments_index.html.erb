@@ -1,19 +1,10 @@
 <% comments.each do |comment| %>
-  <div class="comment-1 row">
-    <div class="comment-user-image col-md-2">
+  <div class="comment-row row">
+    <div class="comment-user-image col-md-1">
       <%= image_tag(comment.user.image_url, class: "img-circle") %>
     </div>
-    <div class="comment-content col-md-10">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title"><%= comment.user.name %> - <%= time_ago_in_words(comment.created_at) %></h3>
-        </div>
-        <div class="panel-body">
-          <p>
-            <%= comment.content %>
-          </p>
-        </div>
-      </div>
+    <div id="comment-<%= comment.id %>-content" class="comment-content col-md-11">
+      <%= render partial: "beers/comments/comment_panel", locals: { comment: comment } %>
     </div>
   </div>
 <% end %>

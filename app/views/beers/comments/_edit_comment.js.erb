@@ -1,0 +1,1 @@
+$("#comment-<%= @comment.id %>-body").html("<%= escape_javascript(render partial: 'beers/comments/edit_comment_form', locals: { comment: @comment }) %>");
