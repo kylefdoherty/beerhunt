@@ -1,16 +1,19 @@
 class BeersController < ApplicationController
+  before_action :set_beer, only: [:show, :edit, :update, :destroy]
+
   def index
     @beer = Beer.new
     @beers = Beer.all
   end
 
-  def new
+  def show
+    @comment = Comment.new
+  end
 
+  def new
   end
 
   def edit
-    @beer = Beer.find(params[:id])
-
     respond_to do |format|
       format.js { render partial: "beers/edit_beer.js", beer: @beer }
       format.json { render partial: "beers/edit_beer.js", beer: @beer }
@@ -18,8 +21,6 @@ class BeersController < ApplicationController
   end
 
   def update
-    @beer = Beer.find(params[:id])
-
     respond_to do |format|
       if @beer.update(beer_params)
         format.js { render partial: "beers/update_beer.js", beer: @beer }
@@ -43,13 +44,16 @@ class BeersController < ApplicationController
   end
 
   def destroy
-    @beer = Beer.find(params[:id])
     @beer.destroy!
 
     redirect_to action: "index"
   end
 
   private
+
+  def set_beer
+    @beer = Beer.find(params[:id])
+  end
 
   def beer_params
     params.require(:beer).permit(:name, :description)

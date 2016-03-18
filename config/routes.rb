@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   get "/auth/:provider/callback", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
-  resources :beers
+  resources :comments, only: [:destroy, :edit, :update]
+
+  resources :beers do
+    resources :comments, only: [:create]
+  end
   resources :likes, only: [:create]
   delete "/unlike", to: "likes#destroy"
 end

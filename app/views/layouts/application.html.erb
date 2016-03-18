@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Beerhunt</title>
+  <title>BeerHunter Club</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -14,5 +14,6 @@
     <% end %>
     <%= yield %>
   </div>
+  <%= render "shared/footer" %>
 </body>
 </html>

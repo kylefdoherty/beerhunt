@@ -1,0 +1,8 @@
+<div class="panel-body">
+  <%= simple_form_for(@comment, remote: true) do |form| %>
+    <p>
+      <%= form.input :content, as: :string %>
+    </p>
+    <%= form.submit "Update Comment", class: "btn btn-default comment-submit-btn" %>
+  <% end %>
+</div>

@@ -1,0 +1,10 @@
+<% comments.each do |comment| %>
+  <div class="comment-row row">
+    <div class="comment-user-image col-md-1">
+      <%= image_tag(comment.user.image_url, class: "img-circle") %>
+    </div>
+    <div id="comment-<%= comment.id %>-content" class="comment-content col-md-11">
+      <%= render partial: "beers/comments/comment_panel", locals: { comment: comment } %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,18 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= comment.user.name %> - <%= time_ago_in_words(comment.created_at) %></h3>
+    <% if comment.user.id == current_user.id %>
+      <div class="edit-comments-icons">
+        <%= link_to comment_path(comment), method: :delete, remote: true, class: "delete-comment" do %>
+          <%= fa_icon "trash-o"%>
+        <% end %>
+        <%= link_to edit_comment_path(comment), remote: true, class: "edit-beer" do %>
+          <%= fa_icon "pencil-square-o"%>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <div id="comment-<%= comment.id %>-body">
+    <%= render partial: "beers/comments/comment_body", locals: { comment: comment } %>
+  </div>
+</div>
