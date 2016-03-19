@@ -3,6 +3,8 @@ class CreateBeers < ActiveRecord::Migration
     create_table :beers do |t|
       t.string :name
       t.text :description
+      t.string :brewery
+      t.float :abv
 
       t.timestamps null: false
     end

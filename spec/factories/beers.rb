@@ -1,6 +1,8 @@
 FactoryGirl.define do
   factory :beer do
-    name "MyString"
-    description "MyText"
+    name Faker::Beer.name
+    description Faker::Lorem.paragraph
+    brewery Faker::Company.name
+    abv Faker::Beer.alcohol
   end
 end

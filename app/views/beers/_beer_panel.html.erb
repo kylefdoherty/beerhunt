@@ -7,14 +7,14 @@
           <div class="like-btn-container" id="like-beer-<%= beer.id %>">
             <%= render partial: "like_beer", locals: { beer: beer } %>
           </div>
-          <a href="#" class="comment-btn btn btn-default">
+          <%= link_to beer_path(beer), class: "comment-btn btn btn-default" do %>
             <%= fa_icon "comment-o "%>
             <span class="comment-count"><%= beer.comments.count %></span>
-          </a>
+          <% end %>
         </div>
       </div>
     </div>
-    <% if current_user.admin? %>
+    <% if current_user && current_user.admin? %>
       <%= render partial: "edit_beer_icons", locals: { beer: beer } %>
     <% end %>
     <div id="beer-<%= beer.id %>-info" class="col-md-10">

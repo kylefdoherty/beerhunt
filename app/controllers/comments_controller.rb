@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:edit, :update, :destroy]
+  before_action :logged_in?, only: [:create]
 
   def create
     @comment = Comment.new(comment_params)

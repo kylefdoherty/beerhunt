@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20160317175001) do
   create_table "beers", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
+    t.string   "brewery"
+    t.float    "abv"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

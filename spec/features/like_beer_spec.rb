@@ -1,21 +1,21 @@
 require "rails_helper"
 
-feature "like beer" do
-  scenario "current user likes a beer" do
-    # user = create(:user)
-    # user_visits_root_path(user)
-    # like_button = first(".like-btn")
-    # like_button.click
+feature "like beer", js: true do
+  before do
+    Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:facebook]
+  end
 
-    # within(like_button) do
-    #   expect(page).to have_css("span.like-count", text: 1)
-    # end
+  scenario "user who's logged in successfully likes a beer" do
+    create(:beer)
+    user_logs_in
+    find(".like-btn").click
+
+    expect(page).to have_css("span.like-count", text: 1)
   end
 end
 
-def user_visits_root_path(user)
-  allow_any_instance_of(ApplicationController).
-    to receive(:current_user).and_return(user)
-
+def user_logs_in
   visit root_path
+  click_link "Login"
+  click_link "Login with Facebook"
 end
