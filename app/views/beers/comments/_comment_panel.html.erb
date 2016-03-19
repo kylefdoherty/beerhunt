@@ -1,7 +1,7 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title"><%= comment.user.name %> - <%= time_ago_in_words(comment.created_at) %></h3>
-    <% if comment.user.id == current_user.id %>
+    <% if current_user && comment.user.id == current_user.id %>
       <div class="edit-comments-icons">
         <%= link_to comment_path(comment), method: :delete, remote: true, class: "delete-comment" do %>
           <%= fa_icon "trash-o"%>

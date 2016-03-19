@@ -1,4 +1,4 @@
-<% if current_user.admin? %>
+<% if current_user && current_user.admin? %>
   <%= render partial: "add_beer", locals: { beer: @beer } %>
 <% end %>
 

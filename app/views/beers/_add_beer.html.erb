@@ -3,5 +3,7 @@
 <%= simple_form_for(beer, html: { class: "form-inline" }) do |form| %>
   <%= form.input :name %>
   <%= form.input :description, as: :string %>
+  <%= form.input :brewery %>
+  <%= form.input :abv %>
   <%= form.button :submit, "Add Beer", class: "btn btn-primary" %>
 <% end %>
