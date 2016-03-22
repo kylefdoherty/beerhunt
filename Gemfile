@@ -39,6 +39,11 @@ group :development do
   gem 'spring'
   gem 'bullet'
   gem 'traceroute'
+  gem "capistrano"
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-passenger', '>= 0.1.1'
 end
 
 group :development, :test do
