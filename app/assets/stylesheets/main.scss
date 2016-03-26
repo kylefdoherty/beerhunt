@@ -30,8 +30,20 @@
 }
 
 .navbar-inverse .navbar-nav > li > a {
-
+  &:hover {
+    color: $primary-color;
+  }
 }
+
+#loginModal {
+  text-align: center;
+
+  .facebook-login {
+    margin-top: 20px;
+  }
+}
+
+
 
 footer {
   background: #fdfdfd;
