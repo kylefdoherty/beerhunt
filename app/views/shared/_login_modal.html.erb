@@ -9,7 +9,11 @@
         <div class="welcome-text">
           Beer Hunt is a community to share and geek out about Sour Beers!
         </div>
-        <%= link_to 'Login with Facebook', '/auth/facebook' %>
+        <%= link_to "/auth/facebook", class: "facebook-login btn btn-primary" do %>
+          Login with Facebook
+          <%= fa_icon "facebook"%>
+        <% end %>
+
       </div>
     </div>
   </div>
