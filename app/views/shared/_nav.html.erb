@@ -11,8 +11,8 @@
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><%= link_to "About", page_path("about") %></li>
+        <li><%= link_to "Sour Beer 101", page_path("sour_beer_101") %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
