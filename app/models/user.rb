@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
 
     if user.new_record?
       user.save!
-      WelcomeMailer.after_signup_welcome_email(user).deliver_now
+      WelcomeMailer.after_signup_welcome_email(user).deliver_later
     end
 
     user
