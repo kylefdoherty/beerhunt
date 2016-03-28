@@ -10,6 +10,26 @@ Rails.application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
+  domain = "104.131.122.143"
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { host: domain }
+
+  puts "======================================================="
+  puts Rails.application.secrets.sendgrid_username
+  puts Rails.application.secrets.sendgrid_password
+  puts "======================================================="
+
+  ActionMailer::Base.smtp_settings = {
+    domain: domain,
+    address: "smtp.sendgrid.net",
+    user_name: Rails.application.secrets.sendgrid_username,
+    password: Rails.application.secrets.sendgrid_password,
+    port: 587,
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
+
+
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
