@@ -1,3 +1,74 @@
 label {
   margin-right: 10px;
 }
+
+#image-upload {
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 0.1px;
+  z-index: -1;
+}
+
+.hide {
+  display: none;
+}
+
+.progress {
+  width: 80%;
+  background-color: #babebf;
+}
+
+.add-beer-form {
+  display: flex;
+}
+
+.beer-image {
+  align-items: center;
+  background: #e3e5e6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+}
+
+.beer-info {
+  width: 70%;
+}
+
+.name-brewery-abv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  width: 100%;
+
+  .form-group {
+    margin-bottom: 0;
+    margin: 5px;
+    width: 45%;
+  }
+
+  .form-group:nth-child(3) {
+    width: 10%;
+  }
+}
+
+.description {
+  margin: 5px;
+
+  textarea {
+    height: 150px;
+  }
+}
+
+.submit-button {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+
+  .btn {
+    width: 50%;
+  }
+}
