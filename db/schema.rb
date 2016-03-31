@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20160317175001) do
     t.string   "name"
     t.text     "description"
     t.string   "brewery"
+    t.string   "image_id"
     t.float    "abv"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
