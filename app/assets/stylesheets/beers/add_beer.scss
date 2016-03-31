@@ -11,6 +11,15 @@ label {
   z-index: -1;
 }
 
+.hide {
+  display: none;
+}
+
+.progress {
+  width: 80%;
+  background-color: #babebf;
+}
+
 .add-beer-form {
   display: flex;
 }
