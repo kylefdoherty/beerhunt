@@ -1,8 +1,8 @@
 <%= simple_form_for(beer, remote: true) do |form| %>
   <%= form.input :name, label: false %>
-  <h5>Brewery: Some Brewery</h5>
-  <h5>From: Some City</h5>
-  <h5>ABV: 10%</h5>
-  <%= form.input :description, as: :string, label: false %>
+  <%= form.input :name %>
+  <%= form.input :brewery %>
+  <%= form.input :abv %>
+  <%= form.input :description, label: false %>
   <%= form.button :submit, "Edit Beer", class: "btn btn-primary" %>
 <% end %>

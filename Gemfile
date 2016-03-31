@@ -28,6 +28,7 @@ gem "font-awesome-rails"
 gem 'high_voltage', '~> 2.4.0'
 gem 'sidekiq'
 gem 'sinatra', :require => nil
+gem 'cloudinary'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

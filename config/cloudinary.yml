@@ -1,0 +1,14 @@
+production:
+  cloud_name: <%= ENV["CLOUDINARY_CLOUD"] %>
+  api_key: <%= ENV["CLOUDINARY_KEY"] %>
+  api_secret: <%= ENV["CLOUDINARY_SECRET"] %>
+
+development:
+  cloud_name: <%= ENV["CLOUDINARY_CLOUD"] %>
+  api_key: <%= ENV["CLOUDINARY_KEY"] %>
+  api_secret: <%= ENV["CLOUDINARY_SECRET"] %>
+
+test:
+  cloud_name: <%= ENV["CLOUDINARY_CLOUD"] %>
+  api_key: <%= ENV["CLOUDINARY_KEY"] %>
+  api_secret: <%= ENV["CLOUDINARY_SECRET"] %>

@@ -4,6 +4,7 @@ class CreateBeers < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.string :brewery
+      t.string :image_id
       t.float :abv
 
       t.timestamps null: false
