@@ -3,10 +3,7 @@
 <% end %>
 
 <div id="beers">
-  <h3>Sour Beers</h3>
   <% @beers.each do |beer| %>
-    <div id="beer-<%=beer.id %>" class="beer panel panel-default clearfix">
-      <%= render partial: "beer_panel", locals: { beer: beer } %>
-    </div>
+    <%= render partial: "beer_panel", locals: { beer: beer } %>
   <% end %>
 </div>
