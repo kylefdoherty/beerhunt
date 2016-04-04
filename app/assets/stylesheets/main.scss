@@ -4,6 +4,11 @@ body {
   background: $body-color;
 }
 
+.content {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
 .navbar {
   background: $nav-color;
   border-color: $nav-color;
@@ -51,6 +56,9 @@ footer {
   box-shadow: 0px -1px 4px 0px #dbd9d9;
   color: $link-color;
   height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   a {
     color: $link-color;
@@ -65,7 +73,6 @@ footer {
     align-items: center;
     display: flex;
     flex-direction: row;
-    margin: auto;
     width: 90%;
   }
 
@@ -83,7 +90,6 @@ footer {
     align-items: center;
     display: flex;
     justify-content: center;
-    min-height: 300px;
     width: 100%;
 
     h4 {
@@ -116,30 +122,35 @@ footer {
   }
 }
 
+.about-page {
+  height: 800px;
+}
+
 @media (max-width: 800px) {
   footer {
     height: 100%;
 
     .footer-container {
-      align-items: center;
       flex-direction: column;
-      justify-content: center;
-      margin: 40px;
-      width: 100%;
     }
 
     .footer-col-1 {
       border: 0;
-      margin-top: 30px;
+      height: 400px;
+      width: 100%;
+    }
+
+    .footer-col-2 {
+      visibility: hidden;
     }
 
     .footer-page-links, .footer-legal-links {
+      align-items: center;
       flex-direction: column;
+      justify-content: center;
     }
   }
 }
 
-.about-page {
-  height: 800px;
-}
+
 
