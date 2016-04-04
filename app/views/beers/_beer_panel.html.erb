@@ -1,7 +1,9 @@
 <div id="beer-<%=beer.id %>" class="panel panel-default beer-panel">
   <div class="col-1">
     <div class="beer-panel-img">
-      <%= cl_image_tag(beer.image_id, :crop => :fill, :width => 160, :height => 160) %>
+      <%= link_to beer_path(beer) do %>
+        <%= cl_image_tag(beer.image_id, :crop => :fill, :width => 160, :height => 160) %>
+      <% end %>
       <p>Photo: </p>
     </div>
   </div>
@@ -11,7 +13,9 @@
         <%= render partial: "edit_beer_icons", locals: { beer: beer } %>
       <% end %>
       <div class="beer-panel-info">
-        <h3><%= beer.brewery %> - <%= beer.name %></h3>
+        <%= link_to beer_path(beer) do %>
+          <h3 class="beer-panel-header"><%= beer.brewery %> - <%= beer.name %></h3>
+        <% end %>
         <p><%= truncate(beer.description, length: 100) %></p>
         <div class="beer-panel-action-buttons">
           <div class="like-button" id="like-beer-<%= beer.id %>">
