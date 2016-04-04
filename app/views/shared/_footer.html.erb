@@ -1,3 +1,22 @@
 <footer>
-
+  <div class="footer-container">
+    <div class="footer-col-1">
+      <div class="footer-page-links">
+        <p><%= link_to "Home", root_path %></p>
+        <p><%= link_to "About", page_path("about") %></p>
+        <p><%= link_to "Sour Beer 101", page_path("sour_beer_101") %></p>
+        <p><a href="mailto:info@sourhunt.com">Email Us</a></p>
+      </div>
+      <p class="footer-rights-reserved">©2016 SourHunt.com. All rights reserved.</p>
+      <div class="footer-legal-links">
+        <p><%= link_to "Terms", page_path("terms_of_service") %></p>
+        <p><%= link_to "Privacy Policy", page_path("privacy_policy") %></p>
+      </div>
+    </div>
+    <div class="footer-col-2">
+      <div class="footer-tagline">
+        <h4>The best place to discover Sour Beers!</h4>
+      </div>
+    </div>
+  </div>
 </footer>

@@ -1,24 +1,35 @@
-<div class="panel-body">
-  <div class="row">
-    <div class="image-container col-md-2">
-      <%= cl_image_tag(beer.image_id, :crop => :fill, :width => 140, :height => 100) %>
-      <div class="action-buttons">
-        <div class="button-container">
-          <div class="like-btn-container" id="like-beer-<%= beer.id %>">
+<div id="beer-<%=beer.id %>" class="panel panel-default beer-panel">
+  <div class="col-1">
+    <div class="beer-panel-img">
+      <%= link_to beer_path(beer) do %>
+        <%= cl_image_tag(beer.image_id, :crop => :fill, :width => 160, :height => 160) %>
+      <% end %>
+      <p>Photo: </p>
+    </div>
+  </div>
+  <div class="col-2">
+    <div class="beer-panel-content">
+      <% if current_user && current_user.admin? %>
+        <%= render partial: "edit_beer_icons", locals: { beer: beer } %>
+      <% end %>
+      <div class="beer-panel-info">
+        <%= link_to beer_path(beer) do %>
+          <h3 class="beer-panel-header"><%= beer.brewery %> - <%= beer.name %></h3>
+        <% end %>
+        <p><%= truncate(beer.description, length: 100) %></p>
+        <div class="beer-panel-action-buttons">
+          <div class="like-button" id="like-beer-<%= beer.id %>">
             <%= render partial: "like_beer", locals: { beer: beer } %>
           </div>
-          <%= link_to beer_path(beer), class: "comment-btn btn btn-default" do %>
-            <%= fa_icon "comment-o "%>
-            <span class="comment-count"><%= beer.comments.count %></span>
-          <% end %>
+          <div class="comment-button">
+            <%= link_to beer_path(beer), class: "btn btn-default" do %>
+              <%= fa_icon "comment-o "%>
+              <span class="comment-count"><%= beer.comments.count %></span>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
-    <% if current_user && current_user.admin? %>
-      <%= render partial: "edit_beer_icons", locals: { beer: beer } %>
-    <% end %>
-    <div id="beer-<%= beer.id %>-info" class="col-md-10">
-      <%= render partial: "beer_info", locals: { beer: beer } %>
-    </div>
   </div>
 </div>
+

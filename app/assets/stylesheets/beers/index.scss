@@ -1,39 +1,86 @@
 @import "../colors";
 
-.beer-image {
-  margin: 10px;
+#beers {
+  margin-top: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 80%;
 }
 
-.panel {
+.beer-panel {
+  background: #fdfdfd;
   border: 0;
-}
+  display: flex;
 
-.panel-body {
-  img {
-    display: block;
-    margin: auto;
+  .col-1 {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 30%;
   }
 
-  .image-container {
-    padding: 0;
-  }
-}
-
-.action-buttons {
-  margin-top: 5px;
-
-  .button-container {
-    margin: auto;
-    width: 57%;
+  .col-2 {
+    align-items: center;
+    display: flex;
+    width: 70%;
   }
 }
 
-.liked {
-  background: $secondary-color;
+.beer-panel a {
+  color: $primary-color;
+
+  &:hover {
+    color: darken( $primary-color, 5% );
+    text-decoration: none;
+  }
 }
 
-.like-btn-container {
-  display: inline;
+@media (max-width: 800px) {
+  .beer-panel {
+    align-items: center;
+    flex-direction: column;
+    height: 500px;
+  }
+
+  .col-1 {
+    width: 100%;
+  }
+
+  .col-2 {
+    width: 100%;
+  }
+
+  .beer-panel-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .beer-panel-action-buttons {
+    justify-content: center;
+  }
+}
+
+.beer-panel-img {
+  margin: 20px;
+}
+
+.beer-panel-content {
+  height: 150px;
+  max-width: 500px;
+}
+
+.beer-panel-action-buttons {
+  display: flex;
+
+  .like-button {
+    margin: 5px;
+  }
+
+  .comment-button {
+    margin: 5px;
+  }
 }
 
 

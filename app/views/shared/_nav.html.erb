@@ -1,15 +1,18 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "SourHunt", root_path, class: "navbar-brand" %>
+      <%= link_to "SourHunt", root_path,  class: "navbar-brand" %>
     </div>
-    <div id="navbar" class="collapse navbar-collapse">
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><%= link_to "About", page_path("about") %></li>
         <li><%= link_to "Sour Beer 101", page_path("sour_beer_101") %></li>
@@ -21,11 +24,9 @@
         <% else %>
           <li><a data-toggle="modal" data-target="#loginModal" href="#">Login</a></li>
         <% end %>
-        <!-- <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li> -->
       </ul>
-    </div><!--/.nav-collapse -->
-  </div>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
 </nav>
 
 <%= render partial: "shared/login_modal" %>
-
