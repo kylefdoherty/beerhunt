@@ -4,7 +4,9 @@
       <%= link_to beer_path(beer) do %>
         <%= cl_image_tag(beer.image_id, :crop => :fill, :width => 160, :height => 160) %>
       <% end %>
-      <p>Photo: </p>
+      <% if beer.photo_credit_site.present? %>
+        <p>Photo: <%= link_to beer.photo_credit_site, url: beer.photo_credit_site_url %></p>
+      <% end %>
     </div>
   </div>
   <div class="col-2">

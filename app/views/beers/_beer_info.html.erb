@@ -11,6 +11,8 @@
     <h4>Brewery: <%= beer.brewery %></h4>
     <h5>ABV: <%= beer.abv %></h5>
     <p><%= beer.description %></p>
-    <p>Photo: </p>
+    <% if beer.photo_credit_site.present? %>
+      <p>Photo: <%= link_to beer.photo_credit_site, url: beer.photo_credit_site_url %></p>
+    <% end %>
   </div>
 </div>

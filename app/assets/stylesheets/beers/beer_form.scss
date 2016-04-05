@@ -59,6 +59,20 @@ label {
   }
 }
 
+.photo-credit {
+  display: flex;
+
+  .beer_photo_credit_site {
+    width: 50%;
+    margin-left: 5px;
+  }
+
+  .beer_photo_credit_site_url {
+    width: 50%;
+    margin-left: 10px;
+  }
+}
+
 .description {
   margin: 5px;
 
