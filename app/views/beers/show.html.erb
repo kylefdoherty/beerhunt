@@ -2,22 +2,12 @@
   <div class="beer-info">
     <div class="beer-img">
       <%= cl_image_tag(@beer.image_id, :crop => :fill, :width => 250, :height => 250) %>
-      <div class="beer-panel-action-buttons">
-        <div class="like-button" id="like-beer-<%= @beer.id %>">
-          <%= render partial: "like_beer", locals: { beer: @beer } %>
-        </div>
-        <div class="comment-button">
-          <%= link_to beer_path(@beer), class: "btn btn-default" do %>
-            <%= fa_icon "comment-o "%>
-            <span class="comment-count"><%= @beer.comments.count %></span>
-          <% end %>
-        </div>
-      </div>
+      <%= render partial: "action_buttons", locals: { beer: @beer } %>
     </div>
     <div class="beer-details">
       <h3><%= @beer.name %></h3>
       <h4>Brewery: <%= @beer.brewery %></h4>
-      <p>ABV: <%= @beer.abv %></p>
+      <h5>ABV: <%= @beer.abv %></h5>
       <p><%= @beer.description %></p>
       <p>Photo: </p>
     </div>

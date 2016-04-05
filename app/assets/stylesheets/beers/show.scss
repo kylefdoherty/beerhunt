@@ -1,39 +1,36 @@
 @import "../colors";
 
 .beer-container {
-  background: purple;
   margin: auto;
   width: 90%;
 
   .beer-info {
-    width: 100%;
-    background: blue;
     display: flex;
     flex-direction: row;
+    width: 100%;
   }
 
   .beer-img {
-    background: yellow;
     width: 40%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 50px;
   }
 
   .beer-details {
-    background: red;
-    width: 60%;
     display: flex;
     flex-direction: column;
     padding-top: 50px;
+    width: 60%;
   }
 
 }
 
 .comments-container {
-  margin: auto;
   margin-top: 50px;
+  margin: auto;
   width: 80%;
 
   h3 {
@@ -79,8 +76,8 @@
     }
 
     .beer-details {
-      width: 100%;
       padding: 20px;
+      width: 100%;
     }
   }
 

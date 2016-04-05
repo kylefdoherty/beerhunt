@@ -1,0 +1,6 @@
+<div class="comment-button">
+  <%= link_to beer_path(beer), class: "btn btn-default" do %>
+    <%= fa_icon "comment-o "%>
+    <span class="comment-count"><%= beer.comments.count %></span>
+  <% end %>
+</div>

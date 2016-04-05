@@ -1,4 +1,4 @@
-<div id="beer-<%=beer.id %>" class="panel panel-default beer-panel">
+<div class="panel panel-default beer-panel">
   <div class="col-1">
     <div class="beer-panel-img">
       <%= link_to beer_path(beer) do %>
@@ -14,17 +14,7 @@
           <h3 class="beer-panel-header"><%= beer.brewery %> - <%= beer.name %></h3>
         <% end %>
         <p><%= truncate(beer.description, length: 140) %> <%= link_to "read more", beer_path(beer) %></p>
-        <div class="beer-panel-action-buttons">
-          <div class="like-button" id="like-beer-<%= beer.id %>">
-            <%= render partial: "like_beer", locals: { beer: beer } %>
-          </div>
-          <div class="comment-button">
-            <%= link_to beer_path(beer), class: "btn btn-default" do %>
-              <%= fa_icon "comment-o "%>
-              <span class="comment-count"><%= beer.comments.count %></span>
-            <% end %>
-          </div>
-        </div>
+        <%= render partial: "action_buttons", locals: { beer: beer } %>
       </div>
     </div>
   </div>
