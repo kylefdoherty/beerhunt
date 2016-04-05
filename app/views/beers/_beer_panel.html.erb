@@ -9,14 +9,11 @@
   </div>
   <div class="col-2">
     <div class="beer-panel-content">
-      <% if current_user && current_user.admin? %>
-        <%= render partial: "edit_beer_icons", locals: { beer: beer } %>
-      <% end %>
       <div class="beer-panel-info">
         <%= link_to beer_path(beer) do %>
           <h3 class="beer-panel-header"><%= beer.brewery %> - <%= beer.name %></h3>
         <% end %>
-        <p><%= truncate(beer.description, length: 100) %></p>
+        <p><%= truncate(beer.description, length: 140) %> <%= link_to "read more", beer_path(beer) %></p>
         <div class="beer-panel-action-buttons">
           <div class="like-button" id="like-beer-<%= beer.id %>">
             <%= render partial: "like_beer", locals: { beer: beer } %>
