@@ -1,10 +1,14 @@
-<%= render partial: "beer_panel", locals: { beer: @beer } %>
-<div class="comments-container">
-  <h3>Discussion</h3>
-  <div class="add-comment">
-    <%= render partial: "beers/comments/add_comment", locals: { beer: @beer, comment: @comment } %>
+<div class="beer-container">
+  <div id="beer-<%= @beer.id %>" class="beer-wrapper">
+    <%= render partial: "beer_info", locals: { beer: @beer } %>
   </div>
-  <div id="beer-<%= @beer.id %>-comments" class="comments-list">
-    <%= render partial: "beers/comments/comments_index", locals: { comments: @beer.comments } %>
+  <div class="comments-container">
+    <h3>Discussion</h3>
+    <div class="add-comment">
+      <%= render partial: "beers/comments/add_comment", locals: { beer: @beer, comment: @comment } %>
+    </div>
+    <div id="beer-<%= @beer.id %>-comments" class="comments-list">
+      <%= render partial: "beers/comments/comments_index", locals: { comments: @beer.comments } %>
+    </div>
   </div>
 </div>

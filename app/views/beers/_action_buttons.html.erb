@@ -1,0 +1,6 @@
+<div class="action-buttons">
+  <div class="like-button" id="like-beer-<%= beer.id %>">
+    <%= render partial: "beers/like_beer.html", locals: { beer: beer } %>
+  </div>
+  <%= render partial: "beers/comment_button.html", locals: { beer: beer } %>
+</div>

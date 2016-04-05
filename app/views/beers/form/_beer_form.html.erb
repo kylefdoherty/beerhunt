@@ -1,0 +1,24 @@
+<div class="beer-form-container">
+  <div class="beer-form-header">
+    <h2><%= header %></h2>
+  </div>
+
+  <div class="beer-form-body">
+    <%= simple_form_for(beer, remote: true, html: { class: "beer-form" }) do |form| %>
+      <%= render partial: "/beers/form/beer_form_image", locals: { form: form } %>
+      <div class="beer-form-info">
+        <div class="name-brewery-abv">
+          <%= form.input :name %>
+          <%= form.input :brewery %>
+          <%= form.input :abv %>
+        </div>
+        <div class="description">
+          <%= form.input :description %>
+        </div>
+        <div class="submit-button">
+          <%= form.button :submit, "Add Beer", class: "btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

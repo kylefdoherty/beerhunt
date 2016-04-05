@@ -1,5 +1,5 @@
 <% if current_user && current_user.admin? %>
-  <%= render partial: "add_beer", locals: { beer: @beer } %>
+  <%= render partial: "beers/form/beer_form", locals: { beer: @beer, header: "Add a New Beer" } %>
 <% end %>
 
 <div id="beers">

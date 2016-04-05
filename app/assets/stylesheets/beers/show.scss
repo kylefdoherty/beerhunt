@@ -1,12 +1,53 @@
 @import "../colors";
 
-.comments-container {
+.beer-container {
   margin: auto;
+  width: 90%;
+
+  a {
+    color: $primary-color;
+
+    &:hover {
+      color: darken( $primary-color, 5% );
+      text-decoration: none;
+    }
+  }
+
+  .beer-info {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .beer-img {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+    width: 40%;
+  }
+
+  .beer-details {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    width: 60%;
+  }
+
+}
+
+.comments-container {
   margin-top: 50px;
+  margin: auto;
   width: 80%;
 
   h3 {
     margin-bottom: 50px;
+  }
+
+  .comment-user-image {
+    padding: 15px;
   }
 }
 
@@ -29,4 +70,24 @@
   .edit-comments-icons {
     float: right;
   }
+}
+
+
+@media (max-width: 800px) {
+  .beer-container {
+    .beer-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .beer-img {
+      width: 100%;
+    }
+
+    .beer-details {
+      padding: 20px;
+      width: 100%;
+    }
+  }
+
 }
