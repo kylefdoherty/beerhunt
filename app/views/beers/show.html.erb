@@ -1,16 +1,6 @@
-<div class="beer-<%= @beer.id %> beer-container">
-  <div class="beer-info">
-    <div class="beer-img">
-      <%= cl_image_tag(@beer.image_id, :crop => :fill, :width => 250, :height => 250) %>
-      <%= render partial: "action_buttons", locals: { beer: @beer } %>
-    </div>
-    <div class="beer-details">
-      <h3><%= @beer.name %></h3>
-      <h4>Brewery: <%= @beer.brewery %></h4>
-      <h5>ABV: <%= @beer.abv %></h5>
-      <p><%= @beer.description %></p>
-      <p>Photo: </p>
-    </div>
+<div class="beer-container">
+  <div id="beer-<%= @beer.id %>" class="beer-wrapper">
+    <%= render partial: "beer_info", locals: { beer: @beer } %>
   </div>
   <div class="comments-container">
     <h3>Discussion</h3>

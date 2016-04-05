@@ -1,1 +1,1 @@
-$("#beer-<%= @beer.id %>-info").html("<%= escape_javascript(render partial: 'edit_form', locals: { beer: @beer }) %>");
+$("#beer-<%= @beer.id %>").html("<%= escape_javascript(render partial: 'add_beer', locals: { beer: @beer }) %>");
