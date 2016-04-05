@@ -17,7 +17,7 @@ end
 feature "delete beer" do
   scenario " admin user deletes a beer" do
     beer = create(:beer)
-    admin_user_visits_root_path
+    admin_user_visits_beer_show_page(beer)
     first(".delete-beer").click
 
     expect(page).to_not have_content(beer.name)
@@ -37,6 +37,14 @@ def admin_user_visits_root_path
     .to receive(:current_user).and_return(admin_user)
 
   visit root_path
+end
+
+def admin_user_visits_beer_show_page(beer)
+  admin_user = build(:user, admin: true)
+  allow_any_instance_of(ApplicationController)
+    .to receive(:current_user).and_return(admin_user)
+
+  visit beer_path(beer)
 end
 
 def non_admin_user_visits_root_path

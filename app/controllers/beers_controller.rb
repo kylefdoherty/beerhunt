@@ -63,7 +63,11 @@ class BeersController < ApplicationController
   end
 
   def beer_params
-    params.require(:beer).permit(:name, :description, :brewery, :abv)
-      .merge(cloudinary_id)
+    if params.fetch(:beer).fetch(:image_id)
+      params.require(:beer).permit(:name, :description, :brewery, :abv, :image_id)
+    else
+      params.require(:beer).permit(:name, :description, :brewery, :abv)
+        .merge(cloudinary_id)
+    end
   end
 end

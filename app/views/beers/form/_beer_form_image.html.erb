@@ -1,0 +1,16 @@
+<div class="beer-form-image">
+  <% if form.object.image_id.present? %>
+    <%= cl_image_tag(form.object.image_id, :crop => :fill, :width => 250, :height => 250) %>
+    <%= form.input :image_id, as: :hidden %>
+  <% else %>
+    <%= cl_image_tag(form.object.image_id, :crop => :fill, :width => 250, :height => 250) %>
+    <%= form.cl_image_upload(:image_id, html: { id: "image-upload" }) %>
+    <label for="image-upload" class="btn btn-primary btn-image-upload">Choose Image to Upload ...</label>
+    <div class="progress hide">
+      <div class="progress-bar" role="progressbar" aria-valuenow="70"
+        aria-valuemin="0" aria-valuemax="100" style="width:0%">
+        </div>
+    </div>
+    <div class="preview-image"></div>
+  <% end %>
+</div>

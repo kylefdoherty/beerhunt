@@ -1,1 +1,1 @@
-$("#beer-<%= @beer.id %>").html("<%= escape_javascript(render partial: 'add_beer', locals: { beer: @beer }) %>");
+$("#beer-<%= @beer.id %>").html("<%= escape_javascript(render partial: '/beers/form/beer_form', locals: { beer: @beer, header: 'Update Beer' }) %>");

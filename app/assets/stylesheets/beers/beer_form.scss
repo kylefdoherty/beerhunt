@@ -1,4 +1,4 @@
-.add-beer-container {
+.beer-form-container {
   margin-bottom: 100px;
 }
 
@@ -24,11 +24,11 @@ label {
   background-color: #babebf;
 }
 
-.add-beer-form {
+.beer-form {
   display: flex;
 }
 
-.beer-image {
+.beer-form-image {
   align-items: center;
   background: #e3e5e6;
   display: flex;
@@ -37,7 +37,7 @@ label {
   width: 30%;
 }
 
-.beer-info {
+.beer-form-info {
   width: 70%;
 }
 
